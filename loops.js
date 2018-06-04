@@ -20,7 +20,12 @@ function doWhileLoop(array) {
   function maybeTrue() {
     return Math.random()>=0.5
   }
-  if array.length>0
+  if (array.length>0) {
+    do {
+      array.pop()
+    } while (array.length>0 && maybeTrue())
+    return array
+  }
   do {
     array.pop()
   } while (array.length>0 && maybeTrue())
